@@ -6,7 +6,7 @@ class TagsParser
     self.ctags = Ctags.new([], {})
   end
 
-  def read_file file
+  def read_tags_file_and_parse_each_line file
     file = File.open(file, 'r') do |f|
       f.each_line do |line|
         set_ctag_information line.split("\t")
